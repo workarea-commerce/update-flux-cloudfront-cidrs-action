@@ -1,0 +1,12 @@
+# action.yml
+name: 'update-flux-cloudfront-cidrs'
+description: 'update the CIDRs in the base-cluster.yaml for CloudFront'
+inputs:
+  url:
+    description: 'URL of ip-ranges.json'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.url }}
